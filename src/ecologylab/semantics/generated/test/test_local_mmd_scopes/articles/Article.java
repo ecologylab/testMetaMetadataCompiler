@@ -1,16 +1,17 @@
-package ecologylab.semantics.generated.test.test_articles;
+package ecologylab.semantics.generated.test.test_local_mmd_scopes.articles;
 
 import ecologylab.serialization.ElementState.xml_other_tags;
 import java.util.ArrayList;
 import ecologylab.semantics.metadata.scalar.MetadataString;
-import ecologylab.semantics.generated.test.test_articles.Source;
+import ecologylab.semantics.generated.test.test_local_mmd_scopes.articles.Author;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.serialization.Hint;
 import java.util.List;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.serialization.simpl_inherit;
-import ecologylab.semantics.generated.test.test_articles.Author;
 import ecologylab.serialization.ElementState.xml_tag;
+import ecologylab.semantics.generated.test.test_local_mmd_scopes.articles.TestArticle;
+import ecologylab.semantics.generated.test.test_local_mmd_scopes.articles.Source;
 
 /**
 *  Article.java
@@ -26,11 +27,6 @@ import ecologylab.serialization.ElementState.xml_tag;
 public class Article extends Document
 {
 	/** 
-	 * The Title of the article.
-	 */ 
-	@simpl_scalar	@simpl_hints(Hint.XML_LEAF)	private ecologylab.semantics.metadata.scalar.MetadataString title;
-
-	/** 
 	 */ 
 	@simpl_collection("author") @mm_name("authors")	private List<Author> authors;
 
@@ -38,6 +34,11 @@ public class Article extends Document
 	 * Metadata related to where an article is published.
 	 */ 
 	@simpl_composite @mm_name("source")	private Source source;
+
+	/** 
+	 * for debug.
+	 */ 
+	@simpl_collection("test_article") @mm_name("test_articles")	private List<TestArticle> testArticles;
 
 	/** 
 	 */ 
@@ -50,38 +51,6 @@ public class Article extends Document
 		super(mmd);
 	}
 
-
-	public ecologylab.semantics.metadata.scalar.MetadataString	title()
-	{
-		ecologylab.semantics.metadata.scalar.MetadataString	result = this.title;
-		if (result == null)
-		{
-			result = new ecologylab.semantics.metadata.scalar.MetadataString();
-			this.title = result;
-		}
-		return result;
-	}
-
-	public java.lang.String getTitle()
-	{
-		return this.title == null ? null : title().getValue();
-	}
-
-	public ecologylab.semantics.metadata.scalar.MetadataString getTitleMetadata()
-	{
-		return title;
-	}
-
-	public void setTitle(java.lang.String title)
-	{
-		if (title != null)
-			this.title().setValue(title);
-	}
-
-	public void setTitleMetadata(ecologylab.semantics.metadata.scalar.MetadataString title)
-	{
-		this.title = title;
-	}
 
 	public List<Author> getAuthors()
 	{
@@ -101,6 +70,16 @@ public class Article extends Document
 	public void setSource(Source source)
 	{
 		this.source = source;
+	}
+
+	public List<TestArticle> getTestArticles()
+	{
+		return testArticles;
+	}
+
+	public void setTestArticles(List<TestArticle> testArticles)
+	{
+		this.testArticles = testArticles;
 	}
 
 	public ecologylab.semantics.metadata.scalar.MetadataString	pages()

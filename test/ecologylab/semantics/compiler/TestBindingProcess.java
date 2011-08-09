@@ -7,9 +7,9 @@ import org.junit.Test;
 
 import ecologylab.semantics.generated.library.RepositoryMetadataTranslationScope;
 import ecologylab.semantics.generated.test.test_yahoo_geo_code.Item;
-import ecologylab.semantics.generated.test.test_yahoo_geo_code.MmdInlineYahooGeoResultInResultsInYahooGeoCode;
-import ecologylab.semantics.generated.test.test_yahoo_geo_code.MmdInlineYahooResultInResultsInYahooResultSet;
 import ecologylab.semantics.generated.test.test_yahoo_geo_code.MyItem;
+import ecologylab.semantics.generated.test.test_yahoo_geo_code.YahooGeoResult;
+import ecologylab.semantics.generated.test.test_yahoo_geo_code.YahooResult;
 import ecologylab.semantics.metadata.MetadataFieldDescriptor;
 import ecologylab.semantics.metametadata.MetaMetadata;
 import ecologylab.semantics.metametadata.MetaMetadataCollectionField;
@@ -24,26 +24,26 @@ public class TestBindingProcess
 	@Test
 	public void testBindYahooGeoCode()
 	{
-		MetaMetadataRepository repository = MetaMetadataRepository.readRepository(new File("../simplTranslators/data/testRepository/testYahooGeoCode.xml"));
+		MetaMetadataRepository repository = MetaMetadataRepository.loadFromFiles(new File("../simplTranslators/data/testRepository/testYahooGeoCode.xml"));
 		repository.bindMetadataClassDescriptorsToMetaMetadata(RepositoryMetadataTranslationScope.get());
 		
-		MetaMetadata yahoo_result_set = repository.getByName("yahoo_result_set");
+		MetaMetadata yahoo_result_set = repository.getMMByName("yahoo_result_set");
 		MetaMetadataCollectionField yahoo_result_set__results = (MetaMetadataCollectionField) yahoo_result_set.getChildMetaMetadata().get("results"); 
 		MetadataFieldDescriptor resultsFd1 = yahoo_result_set__results.getMetadataFieldDescriptor();
 		Assert.assertEquals("Result", resultsFd1.getCollectionOrMapTagName());
 		Assert.assertFalse(resultsFd1.isWrapped());
 		ClassDescriptor resultType1 = resultsFd1.getElementClassDescriptor();
-		Assert.assertSame(ClassDescriptor.getClassDescriptor(MmdInlineYahooResultInResultsInYahooResultSet.class), resultType1);
+		Assert.assertSame(ClassDescriptor.getClassDescriptor(YahooResult.class), resultType1);
 		
-		MetaMetadata yahoo_geo_code = repository.getByName("yahoo_geo_code");
+		MetaMetadata yahoo_geo_code = repository.getMMByName("yahoo_geo_code");
 		MetaMetadataCollectionField yahoo_geo_code__results = (MetaMetadataCollectionField) yahoo_geo_code.getChildMetaMetadata().get("results"); 
 		MetadataFieldDescriptor resultsFd2 = yahoo_geo_code__results.getMetadataFieldDescriptor();
 		Assert.assertEquals("Result", resultsFd2.getCollectionOrMapTagName());
 		Assert.assertFalse(resultsFd2.isWrapped());
 		ClassDescriptor resultType2 = resultsFd2.getElementClassDescriptor();
-		Assert.assertSame(ClassDescriptor.getClassDescriptor(MmdInlineYahooGeoResultInResultsInYahooGeoCode.class), resultType2);
+		Assert.assertSame(ClassDescriptor.getClassDescriptor(YahooGeoResult.class), resultType2);
 		
-		MetaMetadata base_set = repository.getByName("base_set");
+		MetaMetadata base_set = repository.getMMByName("base_set");
 		// items:
 		MetaMetadataCollectionField base_set__items = (MetaMetadataCollectionField) base_set.getChildMetaMetadata().get("items"); 
 		MetadataFieldDescriptor itemsFd1 = base_set__items.getMetadataFieldDescriptor();
@@ -59,7 +59,7 @@ public class TestBindingProcess
 		ClassDescriptor theItemType1 = theItemFd1.getElementClassDescriptor();
 		Assert.assertSame(ClassDescriptor.getClassDescriptor(Item.class), theItemType1);
 		
-		MetaMetadata derived_set = repository.getByName("derived_set");
+		MetaMetadata derived_set = repository.getMMByName("derived_set");
 		MetaMetadataCollectionField derived_set__items = (MetaMetadataCollectionField) derived_set.getChildMetaMetadata().get("items"); 
 		MetadataFieldDescriptor itemsFd2 = derived_set__items.getMetadataFieldDescriptor();
 		Assert.assertEquals("my_items", itemsFd2.getTagName());

@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.test.test_articles;
+package ecologylab.semantics.generated.test.test_local_mmd_scopes.papers;
 
 import ecologylab.serialization.ElementState.xml_other_tags;
 import java.util.ArrayList;
@@ -6,11 +6,11 @@ import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.serialization.Hint;
 import java.util.List;
-import ecologylab.semantics.generated.test.test_articles.Article;
-import ecologylab.semantics.generated.test.test_articles.Paper;
+import ecologylab.semantics.generated.test.test_local_mmd_scopes.articles.Article;
 import ecologylab.serialization.simpl_inherit;
+import ecologylab.semantics.generated.test.test_local_mmd_scopes.papers.Paper;
 import ecologylab.serialization.ElementState.xml_tag;
-import ecologylab.semantics.generated.test.test_articles.Tag;
+import ecologylab.semantics.generated.test.test_local_mmd_scopes.papers.Tag;
 
 /**
 *  Paper.java
