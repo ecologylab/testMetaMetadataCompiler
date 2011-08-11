@@ -24,7 +24,7 @@ public class TestBindingProcess
 	@Test
 	public void testBindYahooGeoCode()
 	{
-		MetaMetadataRepository repository = MetaMetadataRepository.loadFromFiles(new File("../simplTranslators/data/testRepository/testYahooGeoCode.xml"));
+		MetaMetadataRepository repository = MetaMetadataRepository.loadXmlFromFiles(new File("../simplTranslators/data/testRepository/testYahooGeoCode.xml"));
 		repository.bindMetadataClassDescriptorsToMetaMetadata(RepositoryMetadataTranslationScope.get());
 		
 		MetaMetadata yahoo_result_set = repository.getMMByName("yahoo_result_set");
