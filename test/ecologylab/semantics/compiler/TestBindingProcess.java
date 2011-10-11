@@ -1,6 +1,7 @@
 package ecologylab.semantics.compiler;
 
 import java.io.File;
+import java.util.Arrays;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -15,16 +16,20 @@ import ecologylab.semantics.metametadata.MetaMetadata;
 import ecologylab.semantics.metametadata.MetaMetadataCollectionField;
 import ecologylab.semantics.metametadata.MetaMetadataField;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
+import ecologylab.semantics.metametadata.MetaMetadataRepositoryLoader;
 import ecologylab.serialization.ClassDescriptor;
+import ecologylab.serialization.Format;
 
 @SuppressWarnings("rawtypes")
 public class TestBindingProcess
 {
 	
+	static MetaMetadataRepositoryLoader loader = new MetaMetadataRepositoryLoader();
+	
 	@Test
 	public void testBindYahooGeoCode()
 	{
-		MetaMetadataRepository repository = MetaMetadataRepository.loadXmlFromFiles(new File("../simplTranslators/data/testRepository/testYahooGeoCode.xml"));
+		MetaMetadataRepository repository = loader.loadFromFiles(Arrays.asList(new File("../simplTranslators/data/testRepository/testYahooGeoCode.xml")), Format.XML);
 		repository.bindMetadataClassDescriptorsToMetaMetadata(RepositoryMetadataTranslationScope.get());
 		
 		MetaMetadata yahoo_result_set = repository.getMMByName("yahoo_result_set");
