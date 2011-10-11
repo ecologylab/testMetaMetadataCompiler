@@ -1,5 +1,6 @@
 package ecologylab.semantics.generated.test.test_inline_mmd;
 
+import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataInteger;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.serialization.annotations.simpl_composite;

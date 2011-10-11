@@ -3,6 +3,7 @@ package ecologylab.semantics.generated.test.test_yahoo_geo_code;
 import java.util.List;
 
 import ecologylab.semantics.metadata.builtins.Document;
+import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;

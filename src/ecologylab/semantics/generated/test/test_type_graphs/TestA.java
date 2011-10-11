@@ -1,6 +1,7 @@
 package ecologylab.semantics.generated.test.test_type_graphs;
 
 import ecologylab.semantics.metadata.Metadata;
+import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;

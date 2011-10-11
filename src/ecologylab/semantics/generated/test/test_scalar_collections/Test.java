@@ -4,6 +4,7 @@ import java.util.List;
 
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.metadata.Metadata;
+import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataFloat;
 import ecologylab.semantics.metadata.scalar.MetadataInteger;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;

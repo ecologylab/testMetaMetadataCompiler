@@ -3,6 +3,7 @@ package ecologylab.semantics.generated.test.test_local_mmd_scopes.papers;
 import java.util.List;
 
 import ecologylab.semantics.generated.test.test_local_mmd_scopes.articles.Article;
+import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.serialization.annotations.Hint;

@@ -2,6 +2,7 @@ package ecologylab.semantics.generated.test.test_inline_mmd;
 
 import java.util.List;
 
+import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_composite;
