@@ -18,7 +18,7 @@ import ecologylab.semantics.metametadata.MetaMetadataField;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
 import ecologylab.semantics.metametadata.MetaMetadataRepositoryLoader;
 import ecologylab.serialization.ClassDescriptor;
-import ecologylab.serialization.Format;
+import ecologylab.serialization.formatenums.Format;
 
 @SuppressWarnings("rawtypes")
 public class TestBindingProcess
